@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 
 import sqlite3
 
@@ -18,14 +19,14 @@ def get_movies():
 def get_reparto(id_movie):
 	#consigue el reparto
 	con = connect()
-    c = con.cursor()
-    query = "select stars from movies where id = ?"
-    result = c.execute(query, [id_movie])
-    reparto = result.fetchall()
-    return reparto
+	c = con.cursor()
+	query = "select stars from movies where id = ?"
+	result = c.execute(query, [id_movie])
+	reparto = result.fetchall()
+	return reparto
 
 def get_descripcion(id_movie):
-    #consigue la descripción de la respectiva película
+    #consigue la descripción de la respectiva película 
     con = connect()
     c = con.cursor()
     query = "select description from movies where id = ?"
